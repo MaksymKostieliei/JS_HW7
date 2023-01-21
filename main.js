@@ -15,9 +15,9 @@ function searchCandidatesByPhoneNumber(phone) {
 
     return result;   
 }
-console.log(searchCandidatesByPhoneNumber('43'));
-console.log(searchCandidatesByPhoneNumber('+1(869) 40'));
-console.log(searchCandidatesByPhoneNumber('+1(869)408-39-82'));
+// console.log(searchCandidatesByPhoneNumber('43'));
+// console.log(searchCandidatesByPhoneNumber('+1(869) 40'));
+// console.log(searchCandidatesByPhoneNumber('+1(869)408-39-82'));
 
 //task 2
 
@@ -40,3 +40,31 @@ const getCandidateById = id => {
 }
 
 // console.log(getCandidateById("5e216bc9205f933d24f7ef2e"));
+
+
+
+
+//task 3
+
+const sortCandidatesArr = (sortBy) => {
+    if (!sortBy) return condidateArr;
+       
+    let array = [...condidateArr];
+ 
+    return array.sort(function (a, b) { 
+        let aNum = +a.balance.replace(/\D/g, '');
+        let bNum = +b.balance.replace(/\D/g, '');        
+            
+        if (sortBy === 'asc') return  aNum - bNum;
+        if (sortBy === 'desc') return  bNum - aNum;
+    })
+    
+}
+
+console.log(sortCandidatesArr('asc'));
+console.log(sortCandidatesArr('desc'));
+console.log(sortCandidatesArr());
+
+
+
+
